@@ -6,13 +6,12 @@ public class Main {
         MorningRadio radio = new MorningRadio();
 
         radio.turnOn(HostType.LISTENER, Weekday.SUNDAY);
+        radio.turnOn(HostType.TALKER, Weekday.TUESDAY);
         radio.live();
 
         System.out.println("-------------------");
 
         radio.turnOn(HostType.TALKER, Weekday.TUESDAY);
         radio.live();
-
-
     }
 }

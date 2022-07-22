@@ -6,13 +6,21 @@ public class MorningRadio {
 
     private int maxOfSongsPerDay = 10;
     private int numberOfSongsPlayed;
+    private boolean transmissionStillOn;
     private Weekday dayOfWeek;
     private HostType hostType;
 
+
     public void turnOn(HostType host, Weekday day){
+
+        if(transmissionStillOn){
+            System.out.println("You have to wait until the end of this emission.");
+            return;
+        }
         numberOfSongsPlayed = 0;
         dayOfWeek = day;
         hostType = host;
+        transmissionStillOn = true;
     }
 
     public void live(){
@@ -46,11 +54,11 @@ public class MorningRadio {
     }
 
     private void turnOff(){
-        System.out.println("That's it for today, thank you for listening!");
+        transmissionStillOn = false;
+        System.out.println(END_EMISSION);
     }
-
     private void commercialBreak(){
-        System.out.println("Sorry, we have to stop for a commercial break");
+        System.out.println(COMMERCIAL_BREAK);
     }
 
 }
