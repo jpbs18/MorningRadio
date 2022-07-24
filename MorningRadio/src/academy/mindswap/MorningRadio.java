@@ -31,7 +31,7 @@ public class MorningRadio {
 
         while(numberOfSongsPlayed < maxOfSongsPerDay){
             if(numberOfSongsPlayed % 2 == 0 && numberOfSongsPlayed != 0){
-                commercialBreak();
+                System.out.println(COMMERCIAL_BREAK);
             }
             playSong(dayOfWeek);
         }
@@ -57,8 +57,6 @@ public class MorningRadio {
         transmissionStillOn = false;
         System.out.println(END_EMISSION);
     }
-    private void commercialBreak(){
-        System.out.println(COMMERCIAL_BREAK);
-    }
+
 
 }
